@@ -1,0 +1,7 @@
+{
+  "name": "dynamic_questionnaire",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

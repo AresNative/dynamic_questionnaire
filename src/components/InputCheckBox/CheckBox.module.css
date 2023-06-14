@@ -1,0 +1,5 @@
+.checkbox_with {
+     width: 95%;
+     margin: 0 auto;
+     --ion-border-color: #d3d3d3c2 !important;
+}

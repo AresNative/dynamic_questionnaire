@@ -1,15 +1,15 @@
-import { IonList, IonInput, useIonAlert, useIonLoading } from "@ionic/react";
+import { IonInput, useIonAlert, useIonLoading } from "@ionic/react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { Form } from "../services/ProcessData";
-/* 
-import InputForm from "./InputForm/InputForm";
-import InputCheckBox from "./InputCheckBox/InputCheckBox";
-import ButtonSend from "./ButtonSend/ButtonSend";
-import InputTogle from "./InputToggle/InputTogle";
-import InputOpcionMultiple from "./InputOptionMultiple/InputOpcionMultiple";
-import InputSelect from "./InputSelect/InputSelect"; 
-*/
+
+import InputForm from "../components/InputForm/InputForm";
+import InputCheckBox from "../components/InputCheckBox/InputCheckBox";
+import ButtonSend from "../components/ButtonSend/ButtonSend";
+import InputTogle from "../components/InputToggle/InputTogle";
+import InputOpcionMultiple from "../components/InputOptionMultiple/InputOpcionMultiple";
+import InputSelect from "../components/InputSelect/InputSelect";
+
 interface PropsCuestion {
     funtion?: string;
     message?: string;
@@ -29,19 +29,9 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
     const [present] = useIonAlert();
     const [presentLoading, dissmis] = useIonLoading();
     const onSubmit = async (data: any) => {
-        const totalData: boolean = data.every((obj: any) => obj.length === 0)
-        if (totalData) {
-            present({
-                header: "Error!",
-                message: "No hay campos reconocidos",
-                buttons: [
-                    { text: 'Ok' },
-                ]
-            })
-        }
-        presentLoading({
+        /* presentLoading({
             message: 'Espere un momento por favor...'
-        });
+        }); */
         await Form(funtion, data)
             .then((r: any) => {
                 if (r.class) {
@@ -64,15 +54,15 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
                     { text: 'Ok' },
                 ]
             }));
-        dissmis()
+        /* dissmis(); */
     }
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                {dataForm.map((d: any) => {
+                {dataForm.map((d: any, key: any) => {
                     return (
                         <SwitchTypeInputRender
-                            key={d.id}
+                            key={key}
                             cuestion={d}
                             register={register}
                             watch={watch}
@@ -83,10 +73,10 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
                     );
                 })}
                 <br></br>
-                {/* <ButtonSend
+                <ButtonSend
                     funtion={funtion}
                     message={message}
-                /> */}
+                />
             </form>
         </>
     );
@@ -94,7 +84,7 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
 export const SwitchTypeInputRender = (props: any) => {
     const { tipo, value } = props.cuestion;
     switch (tipo) {
-        /* case "INPUT":
+        case "INPUT":
             return <InputForm key={props.id} {...props} />;
         case "CHECKBOX":
             return <InputCheckBox key={props.id} {...props} />;
@@ -106,7 +96,7 @@ export const SwitchTypeInputRender = (props: any) => {
             return <InputSelect key={props.id} {...props} />
         case "VALORES":
             return <IonInput style={{ display: "none" }} readonly disabled value={value} {...props.register(props.cuestion.name, { value: value })} />;
-         */default:
+        default:
             return <h1 style={{ color: "red" }}> {tipo} </h1>;
     }
 };

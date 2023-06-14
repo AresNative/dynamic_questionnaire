@@ -1,0 +1,16 @@
+.border_color {
+     margin: 0 auto;
+     --ion-border-color: #d3d3d3c2 !important;
+}
+
+.with {
+     width: 95%;
+     margin: 0 auto;
+}
+
+@media (min-width:768px) {
+     .with {
+          width: 30rem;
+          margin: 0 auto;
+     }
+}

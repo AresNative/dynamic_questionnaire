@@ -1,0 +1,41 @@
+.item {
+     /* border: 1px solid #d3d3d3c2 !important;
+     border-radius: 1rem; */
+     --ion-border-color: #d3d3d3c2 !important;
+}
+.note {
+     width: 95%;
+     margin: 0 auto;
+}
+
+.margin_btn {
+     width: 95%;
+     margin: 0 auto;
+}
+@media (max-width:320px) {
+
+     /* Pnatallas pequeñas */
+     .item {
+          margin: 0px;
+          width: 95%;
+     }
+}
+
+@media (min-width:321px) {
+
+     /* Celulares */
+     .item {
+          margin: 0 auto;
+          width: 95%;
+     }
+}
+
+@media (min-width:768px) {
+     .margin_btn {
+               width: 30rem;
+               margin: 0 auto;
+          }
+     .item {
+          width: 30rem;
+     }
+}

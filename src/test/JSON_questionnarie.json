@@ -1,10 +1,10 @@
-[
+[  
    {
       "id":0,
       "tipo":"INPUT",
-      "type":"password",
-      "name":"matricula",
-      "placeholder":"Matricula",
+      "type":"email",
+      "name":"contacto",
+      "placeholder":"Email para contactarlo",
       "require":true
    },
    {

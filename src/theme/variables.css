@@ -234,3 +234,14 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+.input-required {
+  font-weight: 500;
+  margin-top: 0.5rem;
+  font-size: 22px;
+  color: #F94C47;
+  text-align: right;
+  justify-content: end;
+  float: left;
+  margin-left: -0.55rem;
+  padding-left: 1rem;
+}

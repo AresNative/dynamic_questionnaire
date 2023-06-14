@@ -88,12 +88,6 @@ pasos...
 
 ✨ El archivo dist/index.html ya existe. ¿Sobrescribir? **N**
 
-✨ What do you to use your public directory: **dist**
-
-✨ Configure as a single page app (rewrite all urls to /index.html)? **y**
-
-✨ File dist/index.html already exists. Overwrite? **N**
-
 # Dynamic quizzes
 
 This works through JSON's that are received

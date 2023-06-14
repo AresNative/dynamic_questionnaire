@@ -39,6 +39,10 @@ https://ionicframework.com/docs/updating/7-0
 
 https://nodejs.org/es
 
+✅ Firebase - crear cuenta y un proyecto en firebase
+
+https://firebase.google.com/
+
 **PLUGINS**
 
 ✅ Firebase - npm i firebas --save
@@ -88,12 +92,6 @@ pasos...
 
 ✨ El archivo dist/index.html ya existe. ¿Sobrescribir? **N**
 
-✨ What do you to use your public directory: **dist**
-
-✨ Configure as a single page app (rewrite all urls to /index.html)? **y**
-
-✨ File dist/index.html already exists. Overwrite? **N**
-
 # Dynamic quizzes
 
 This works through JSON's that are received
@@ -134,6 +132,10 @@ https://ionicframework.com/docs/updating/7-0
 ✅ Node - 16.13.1 onwards
 
 https://nodejs.org/en
+
+✅ Firebase - create account and a project in firebase
+
+https://firebase.google.com/
 
 **PLUGINS**
 

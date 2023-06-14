@@ -39,6 +39,10 @@ https://ionicframework.com/docs/updating/7-0
 
 https://nodejs.org/es
 
+✅ Firebase - crear cuenta y un proyecto en firebase
+
+https://firebase.google.com/
+
 **PLUGINS**
 
 ✅ Firebase - npm i firebas --save
@@ -128,6 +132,10 @@ https://ionicframework.com/docs/updating/7-0
 ✅ Node - 16.13.1 onwards
 
 https://nodejs.org/en
+
+✅ Firebase - create account and a project in firebase
+
+https://firebase.google.com/
 
 **PLUGINS**
 

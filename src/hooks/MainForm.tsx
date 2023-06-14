@@ -1,4 +1,4 @@
-import { IonInput, useIonAlert, useIonLoading } from "@ionic/react";
+import { IonButton, IonInput, IonList, useIonAlert, useIonLoading } from "@ionic/react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { Form } from "../services/ProcessData";
@@ -9,15 +9,25 @@ import ButtonSend from "../components/ButtonSend/ButtonSend";
 import InputTogle from "../components/InputToggle/InputTogle";
 import InputOpcionMultiple from "../components/InputOptionMultiple/InputOpcionMultiple";
 import InputSelect from "../components/InputSelect/InputSelect";
+import { useRef } from "react";
 
 interface PropsCuestion {
     funtion?: string;
     message?: string;
     dataForm: any;
+    tabla: string;
 }
+
 export const MainForm: React.FC<PropsCuestion> = (values: any) => {
     let history = useHistory();
-    const { funtion, dataForm, message } = values;
+    const buttonRef = useRef<HTMLIonButtonElement>(null);
+    async function activarBoton() {
+        console.log("click")
+        if (buttonRef.current) {
+            buttonRef.current.click();
+        }
+    }
+    const { funtion, dataForm, message, tabla } = values;
     const {
         register,
         handleSubmit,
@@ -32,7 +42,7 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
         /* presentLoading({
             message: 'Espere un momento por favor...'
         }); */
-        await Form(funtion, data)
+        await Form(funtion, data, tabla)
             .then((r: any) => {
                 if (r.class) {
                     present({
@@ -72,12 +82,11 @@ export const MainForm: React.FC<PropsCuestion> = (values: any) => {
                         />
                     );
                 })}
-                <br></br>
-                <ButtonSend
-                    funtion={funtion}
-                    message={message}
-                />
+                <IonButton style={{ display: "none" }} ref={buttonRef} type="submit" > Enviar </IonButton>
             </form>
+            <br /><br />
+            <br /><br />
+            <ButtonSend activarBoton={activarBoton} />
         </>
     );
 }

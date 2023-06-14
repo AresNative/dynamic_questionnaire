@@ -1,16 +1,16 @@
 import { searchData, AddData } from "./fireFunction";
 
-export const Form = (funtion: string, data: any) =>
+export const Form = (funtion: string, data: any, tabla: string) =>
     new Promise((resolve, reject) => {
         switch (funtion) {
             case "sarch-questions":
-                searchData(data.name_question, "questions", "data.name_question")
+                searchData(data.name_question, tabla, "data.name_question")
                     .then((r: any) => resolve(r))
                     .catch((r: any) => reject("Error en los datos, intente de nuevo"))
 
                 break;
             case "register-data":
-                AddData("test_add_data", data)
+                AddData(tabla, data)
                     .then((r: any) => resolve({ class: "alert", header: "Nuevo registro", alert: r.message }))
                     .catch((r: any) => resolve({ class: "alert", header: "Nuevo registro", alert: r }))
                 break;

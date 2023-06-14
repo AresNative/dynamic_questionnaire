@@ -1,6 +1,5 @@
-import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonFab, IonFabButton, IonGrid, IonHeader, IonIcon, IonList, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import dataJsonTest from "../test/JSON_questionnarie.json";
-import { add } from 'ionicons/icons';
 import { MainForm } from '../hooks/MainForm';
 const Quiz_test: React.FC = () => {
     return (
@@ -20,6 +19,7 @@ const Quiz_test: React.FC = () => {
                 <MainForm
                     funtion="register-data"
                     dataForm={dataJsonTest}
+                    tabla="test_add_data"
                 />
             </IonContent>
         </IonPage>

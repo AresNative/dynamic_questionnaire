@@ -4,8 +4,10 @@
 }
 
 .with {
-     width: 95%;
      margin: 0 auto;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     overflow: hidden;
 }
 
 @media (min-width:768px) {

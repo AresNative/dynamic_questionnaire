@@ -45,7 +45,7 @@ https://firebase.google.com/
 
 **PLUGINS**
 
-✅ Firebase - npm i firebas --save
+✅ Firebase - npm i firebase --save
 
 ✅ uuid - npm i uuid | **no olvidar instalar los types** |
 
